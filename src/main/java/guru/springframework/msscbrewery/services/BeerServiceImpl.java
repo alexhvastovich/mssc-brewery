@@ -9,9 +9,17 @@ import java.util.UUID;
 public class BeerServiceImpl implements BeerService {
     @Override
     public BeerDto getBeerById(UUID beerId) {
-        return BeerDto.builder().id(UUID.randomUUID())
+        return BeerDto.builder()
+                .id(UUID.randomUUID())
                 .beerName("Beer Name")
                 .beerStyle("Beer Style")
+                .build();
+    }
+
+    @Override
+    public BeerDto savedNewBeer(BeerDto beerDto) {
+        return BeerDto.builder()
+                .id(UUID.randomUUID())
                 .build();
     }
 }
